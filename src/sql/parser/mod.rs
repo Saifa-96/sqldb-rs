@@ -1,4 +1,4 @@
-mod ast;
+pub mod ast;
 mod lexer;
 
 use crate::error::{Error, Result};
@@ -86,7 +86,7 @@ impl<'a> Parser<'a> {
                 }
             }
             values.push(exprs);
-            if (self.next_if_token(Token::Comma).is_none()) {
+            if self.next_if_token(Token::Comma).is_none() {
                 break;
             }
         }

@@ -13,7 +13,7 @@ pub enum Statement {
     }
 }
 
-#[derive(Debug, PartialEq)]
+#[derive(Debug, Clone, PartialEq)]
 pub struct Column {
     pub name: String,
     pub datatype: DataType,
@@ -21,7 +21,7 @@ pub struct Column {
     pub default: Option<Expression>,
 }
 
-#[derive(Debug, PartialEq)]
+#[derive(Debug, Clone, PartialEq)]
 pub enum Expression {
     Consts(Consts),
 }
@@ -33,7 +33,7 @@ impl From<Consts> for Expression {
 }
 
 
-#[derive(Debug, PartialEq)]
+#[derive(Debug, Clone, PartialEq)]
 pub enum Consts {
     Null,
     Boolean(bool),
