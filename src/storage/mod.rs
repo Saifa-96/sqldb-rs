@@ -1,33 +1,4 @@
-use crate::error::Result;
-
-mod engine;
-
-pub struct Mvcc {
-
-}
-
-impl Clone for Mvcc {
-    fn clone(&self) -> Self {
-        Mvcc {}
-    }
-}
-
-impl Mvcc {
-    pub fn new() -> Self {
-        Mvcc {}
-    }
-
-    pub fn begin(&self) -> Result<MvccTransaction> {
-        Ok(MvccTransaction::new())
-    }
-}
-
-pub struct MvccTransaction {
-
-}
-
-impl MvccTransaction {
-    pub fn new() -> Self {
-        Self {}
-    }
-}
+pub mod engine;
+pub mod memory;
+pub mod disk;
+pub mod mvcc;
